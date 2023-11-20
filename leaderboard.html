@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Three Tabs Example</title>
+    <link rel="stylesheet" href="leaderboard.css">
+    <script src="https://components.bunchball.com/web/latest/component.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .challenge-details .slide-in {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 125px;
+        }
+
+        .child-page-title .text-section-title .secondary-page-title .clickable {
+
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .details-section {
+            grid-area: 2 / 1 / 3 / 2;
+
+        }
+
+        .tasks-section {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .rewards-section {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <h2 class="university-text">My University</h2>
+            <div class="tabs">
+                <div class="tab" onclick="showTab('tab1')">Learning
+                    <sapn>|<span>
+                </div>
+                <div class="tab" onclick="showTab('tab2')">Leaderboard
+                    <sapn>|<span>
+
+                </div>
+                <div class="tab" onclick="showTab('tab3')">Activity
+                    <sapn>|<span>
+                </div>
+                <div class="tab" onclick="showTab('tab4')">Rewards</div>
+            </div>
+
+            <div class="tab-content" id="tab1"> <!-- Initially active tab -->
+
+
+            </div>
+
+            <div class="tab-content" id="tab2">
+
+                <div class="container-flex">
+
+                    <div class="bb-container">
+                        <!-- <div class="sub-arrow" id="toggleButton">
+                            <h2 class="title">Leaders in credentials achieved
+                            </h2>
+                        </div> -->
+
+                        <!-- <div class="bb-wrapper" id="bb-colaps"> -->
+                        <!-- <bunchball-leaders style="display:block; width:400px; height:450px;"
+                                data-token="0f6f516db19275fa0aba5f6b85f20b82463ffe4e"
+                                data-server="https://api.sandbox.bunchball.com" data-user-id="amar.bhatt@teknopoint.in"
+                                data-empty-message='No leaders to show'
+                                data-leaderboard-configs='[{"name":"Credit Leaderboard Weekly","leaderboardId":"4306","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Monthly","leaderboardId":"4307","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Yearly","leaderboardId":"4308","groupClassIds":"","criteria":"sum"}]'
+                                data-leaderboard-configs-collection='[{"name":"Credit Leaderboard Weekly","leaderboardId":"4306","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Monthly","leaderboardId":"4307","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Yearly","leaderboardId":"4308","groupClassIds":"","criteria":"sum"}]'
+                                data-page-size='100' data-title='Leaders' data-custom-css=''>
+                            </bunchball-leaders>
+                        </div> -->
+
+                        <!-- </div> -->
+                        <bunchball-leaders style="display:block;" data-token="4e9554ab71a0b7371a11d4525010972b419356cc"
+                            data-server="https://api.sandbox.bunchball.com"
+                            data-user-id="4e9554ab71a0b7371a11d4525010972b419356cc"
+                            data-empty-message='No leaders to show'
+                            data-leaderboard-configs='[{"name":"Credit Leaderboard Monthly","leaderboardId":"4307","groupClassIds":"","showProfile":"true","criteria":"sum"},{"name":"Credit Leaderboard Yearly","leaderboardId":"4308","groupClassIds":"","showProfile":"true","criteria":"sum"},{"name":"Credit Quarterly Leaderboard","leaderboardId":"4327","groupClassIds":"","showProfile":"true","criteria":"sum"},{"name":"Credit weekly leaderboard","leaderboardId":"4306","groupClassIds":"","showProfile":"true","criteria":"count"}]'
+                            data-leaderboard-configs-collection='[{"name":"Credit Leaderboard Monthly","leaderboardId":"4307","groupClassIds":"","showProfile":"true","criteria":"sum"},{"name":"Credit Leaderboard Yearly","leaderboardId":"4308","groupClassIds":"","showProfile":"true","criteria":"sum"},{"name":"Credit Quarterly Leaderboard","leaderboardId":"4327","groupClassIds":"","showProfile":"true","criteria":"sum"},{"name":"Credit weekly leaderboard","leaderboardId":"4306","groupClassIds":"","showProfile":"true","criteria":"count"}]'
+                            data-page-size='100' data-title='Leaders'
+                            data-custom-css='["https://ganesh2811.github.io/nitro-files/leaderboard.css"]'
+                            data-custom-css='["https://ganesh2811.github.io/nitro-files/leaderboard.css"]'>
+                        </bunchball-leaders>
+
+
+
+
+
+                        <div class="bb-container">
+                            <!-- <bunchball-leaders style="display:block; width:400px; height:450px;"
+                            data-token="0f6f516db19275fa0aba5f6b85f20b82463ffe4e"
+                            data-server="https://api.sandbox.bunchball.com" data-user-id="amar.bhatt@teknopoint.in"
+                            data-empty-message='No leaders to show'
+                            data-leaderboard-configs='[{"name":"Credit Leaderboard Weekly","leaderboardId":"4306","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Monthly","leaderboardId":"4307","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Yearly","leaderboardId":"4308","groupClassIds":"","criteria":"sum"}]'
+                            data-leaderboard-configs-collection='[{"name":"Credit Leaderboard Weekly","leaderboardId":"4306","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Monthly","leaderboardId":"4307","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Yearly","leaderboardId":"4308","groupClassIds":"","criteria":"sum"}]'
+                            data-page-size='100' data-title='Leaders' data-custom-css=''>
+                        </bunchball-leaders> -->
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <!-- <div class="border"></div> -->
+                <!-- credit  -->
+                <!-- <bunchball-leaders style="display:block; width:400px; height:450px;"
+                        data-token="864aa910a24acce6d2955d4d4127c0d41f45578b"
+                        data-server="https://api.sandbox.bunchball.com" data-user-id="amar.bhatt@teknopoint.in"
+                        data-empty-message='No leaders to show'
+                        data-leaderboard-configs='[{"name":"Credit Leaderboard Weekly","leaderboardId":"4306","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Monthly","leaderboardId":"4307","groupClassIds":"","showProfile":"true","criteria":"sum"},{"name":"Credit Leaderboard Yearly","leaderboardId":"4308","groupClassIds":"","showProfile":"true","criteria":"sum"}]'
+                        data-leaderboard-configs-collection='[{"name":"Credit Leaderboard Weekly","leaderboardId":"4306","groupClassIds":"","criteria":"sum"},{"name":"Credit Leaderboard Monthly","leaderboardId":"4307","groupClassIds":"","showProfile":"true","criteria":"sum"},{"name":"Credit Leaderboard Yearly","leaderboardId":"4308","groupClassIds":"","showProfile":"true","criteria":"sum"}]'
+                        data-page-size='100' data-title='Leaders' data-custom-css=''>
+                    </bunchball-leaders> -->
+
+
+
+
+            </div>
+            <!-- 
+                <bunchball-missions style="display:block; width:450px; height:450px;"
+                    data-token="40a58967ec019dfc92d71ed4e4b78562e6dcba4f"
+                    data-server="https://api.sandbox.bunchball.com" data-user-id="amar.bhatt@teknopoint.in"
+                    data-completed-missions-tab-name='Completed' data-detail-title='Missions'
+                    data-eligible-missions-tab-name='To Do' data-hide-filter-expiring='false'
+                    data-hide-filter-inprogress='false' data-hide-filter-labels='false' data-log-click-through='false'
+                    data-navigation='new tab' data-return-count='100' data-show-completed-missions='true'
+                    data-show-date-as-duration='true' data-show-eligible-missions='true'
+                    data-show-forced-label-filter='false' data-show-locked='all' data-subtitle='New mission Demo '
+                    data-title='Missions' data-custom-css=''>
+                </bunchball-missions> -->
+
+        </div>
+        <!-- <div class="tab-content" id="tab3">
+        <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <span class="slider"></span>
+            <span id="status"></span>
+        </label>
+        <div class="Bunchball-wrapper">
+            <div class="Credential-wrap" style="display: none;">
+                <div id="challengeData">
+                    <div class="imagewrap">
+                        <div id="challengeImage"></div>
+                    </div>
+                    <div class="points-wrap">
+                        <div id="challengeName"></div>
+                        <div id="challengePoints"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="Credit-wrap">
+                <bunchball-missions style="display:block; width:1319px; height:487px;"
+                    data-token="8605199965d5f52e674f249f6e7e94758f4a06b7"
+                    data-server="https://api.sandbox.bunchball.com" data-user-id="amar.bhatt@teknopoint.in"
+                    data-completed-missions-tab-name='Completed'
+                    data-custom-css='["https://teknopointstaging.com/clients/alm-adu/css/leaderboard.css"]'
+                    data-eligible-missions-tab-name='To Do' data-hide-filter-expiring='true'
+                    data-hide-filter-inprogress='true' data-hide-filter-labels='true' data-log-click-through='false'
+                    data-navigation='new tab' data-return-count='10' data-show-completed-missions='false'
+                    data-show-date-as-duration='true' data-show-eligible-missions='true'
+                    data-show-forced-label-filter='false' data-show-locked='all' data-title='Missions'
+                    data-detail-title='Missions'
+                    data-custom-css='["https://teknopointstaging.com/clients/alm-adu/css/leaderboard.css"]'>
+                </bunchball-missions>
+
+            </div>
+        </div>
+    </div> -->
+
+
+
+    </div>
+
+    <div class="tab-content" id="tab4">
+        <div class="token-main">
+            <!-- <bunchball-trophy style="display:block; width:1318px; height:400px;"
+                    data-token="5e536f47493c676e57556e837950fd9a85ddaa13"
+                    data-server="https://api.sandbox.bunchball.com" data-user-id="amar.bhatt@teknopoint.in"
+                    data-custom-css='["https://teknopointstaging.com/clients/alm-adu/css/leaderboard.css"]'
+                    data-empty-message='Any trophies you earn will appear here.' data-latest-only='false'
+                    data-page-size='8' data-title='New Demo Trophy Cases'
+                    data-custom-css='["https://teknopointstaging.com/clients/alm-adu/css/leaderboard.css"]'>
+                </bunchball-trophy> -->
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+</body>
+
+
+</script>
+
+<script src="leaderboard.js"></script>
+
+</html>
